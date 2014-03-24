@@ -15,7 +15,7 @@ if( ! defined( 'ABSPATH' ) ) exit;
 if( ! class_exists( '{TODO:PLUGIN}' ) ) :
 
 /**
- * Aqs
+ * {TODO:PLUGIN}
  */
 class {TODO:PLUGIN}
 {
