@@ -1,0 +1,13 @@
+{
+    "name": "developer/plugin",
+    "type": "wordpress-plugin",
+    "description": "Plugin description",
+    "authors": [
+        {
+            "name": "Developer",
+            "email": "developer@github.com"
+        }
+    ],
+    "require": {
+    }
+}
