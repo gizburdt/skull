@@ -72,29 +72,29 @@ class {TODO:PLUGIN}
 
 	function register_styles()
 	{		
-		wp_register_style( '{PLUGIN:LOWER}', {TODO:UPPER}_URL . 'assets/css/{PLUGIN:LOWER}.css', false, {TODO:UPPER}_VERSION, 'screen' );
+		wp_register_style( '{TODO:LOWER}', {TODO:UPPER}_URL . 'assets/css/{TODO:LOWER}.css', false, {TODO:UPPER}_VERSION, 'screen' );
 	}
 
 	function enqueue_styles()
 	{
-		wp_enqueue_style( '{PLUGIN:LOWER}' );
+		wp_enqueue_style( '{TODO:LOWER}' );
 	}
 
 	function register_scripts()
 	{
-		wp_register_script( '{PLUGIN:LOWER}', {TODO:UPPER}_URL . 'assets/js/{PLUGIN:LOWER}.js', null, {TODO:UPPER}_VERSION );
+		wp_register_script( '{TODO:LOWER}', {TODO:UPPER}_URL . 'assets/js/{TODO:LOWER}.js', null, {TODO:UPPER}_VERSION );
 	}
 	
 	function enqueue_scripts()
 	{
-		wp_enqueue_script( '{PLUGIN:LOWER}' );
+		wp_enqueue_script( '{TODO:LOWER}' );
 		
 		self::localize_scripts();
 	}
 
 	function localize_scripts()
 	{
-		wp_localize_script( '{PLUGIN:LOWER}', '{TODO:PLUGIN}', array(
+		wp_localize_script( '{TODO:LOWER}', '{TODO:PLUGIN}', array(
 			'home_url'			=> get_home_url(),
 			'ajax_url'			=> admin_url( 'admin-ajax.php' ),
 			'wp_version'		=> get_bloginfo( 'version' )
