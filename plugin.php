@@ -10,9 +10,11 @@ Author URI:     {TODO:AUTHOR_URI}
 License:        GPLv2
 */
 
-if( ! defined( 'ABSPATH' ) ) exit;
+if (!defined('ABSPATH')) {
+    exit;
+}
 
-if( ! class_exists( 'Skull' ) ) :
+if (!class_exists('Skull')) :
 
 class Skull
 {
@@ -20,9 +22,8 @@ class Skull
 
     public static function instance()
     {
-        if ( ! isset( self::$instance ) )
-        {
-            self::$instance = new Skull;
+        if (!isset(self::$instance)) {
+            self::$instance = new self();
             self::$instance->setup_constants();
             self::$instance->includes();
             self::$instance->add_hooks();
@@ -32,70 +33,73 @@ class Skull
         return self::$instance;
     }
 
-    function setup_constants()
+    public function setup_constants()
     {
-        if( ! defined( 'SKULL_VERSION' ) )
-            define( 'SKULL_VERSION', '0.1' );
+        if (!defined('SKULL_VERSION')) {
+            define('SKULL_VERSION', '0.1');
+        }
 
-        if( ! defined( 'SKULL_DIR' ) )
-            define( 'SKULL_DIR', plugin_dir_path( __FILE__ ) );
+        if (!defined('SKULL_DIR')) {
+            define('SKULL_DIR', plugin_dir_path(__FILE__));
+        }
 
-        if( ! defined( 'SKULL_URL' ) )
-            define( 'SKULL_URL', plugin_dir_url( __FILE__ ) );
+        if (!defined('SKULL_URL')) {
+            define('SKULL_URL', plugin_dir_url(__FILE__));
+        }
     }
 
-    function includes()
+    public function includes()
     {
-        include( SKULL_DIR . 'classes/class-content-types.php' );
-        include( SKULL_DIR . 'classes/class-shortcodes.php' );
+        include SKULL_DIR.'classes/class-content-types.php';
+        include SKULL_DIR.'classes/class-shortcodes.php';
     }
 
-    function add_hooks()
+    public function add_hooks()
     {
         // Styles
-        add_action( 'wp_enqueue_scripts', array( &$this, 'register_styles' ) );
-        add_action( 'wp_enqueue_scripts', array( &$this, 'enqueue_styles' ) );
+        add_action('wp_enqueue_scripts', [&$this, 'register_styles']);
+        add_action('wp_enqueue_scripts', [&$this, 'enqueue_styles']);
 
         // Scripts
-        add_action( 'wp_enqueue_scripts', array( &$this, 'register_scripts' ) );
-        add_action( 'wp_enqueue_scripts', array( &$this, 'enqueue_scripts' ) );
+        add_action('wp_enqueue_scripts', [&$this, 'register_scripts']);
+        add_action('wp_enqueue_scripts', [&$this, 'enqueue_scripts']);
     }
 
-    function execute()
+    public function execute()
     {
-        self::$instance->content_types = new Skull_Content_Types;
-        self::$instance->shortcodes    = new Skull_Shortcodes;
+        self::$instance->content_types = new Skull_Content_Types();
+        self::$instance->shortcodes = new Skull_Shortcodes();
     }
 
-    function register_styles()
+    public function register_styles()
     {
-        wp_register_style( 'skull', SKULL_URL . 'assets/css/skull.css', false, SKULL_VERSION, 'screen' );
+        wp_register_style('skull', SKULL_URL.'assets/css/skull.css', false, SKULL_VERSION, 'screen');
     }
 
-    function enqueue_styles()
+    public function enqueue_styles()
     {
-        wp_enqueue_style( 'skull' );
+        wp_enqueue_style('skull');
     }
 
-    function register_scripts()
+    public function register_scripts()
     {
-        wp_register_script( 'skull', SKULL_URL . 'assets/js/skull.js', null, SKULL_VERSION );
+        wp_register_script('skull', SKULL_URL.'assets/js/skull.js', null, SKULL_VERSION);
     }
 
-    function enqueue_scripts()
+    public function enqueue_scripts()
     {
-        wp_enqueue_script( 'skull' );
+        wp_enqueue_script('skull');
 
         self::localize_scripts();
     }
 
-    function localize_scripts()
+    public function localize_scripts()
     {
-        wp_localize_script( 'skull', 'Skull', array(
+        wp_localize_script('skull', 'Skull', [
             'home_url'   => get_home_url(),
-            'ajax_url'   => admin_url( 'admin-ajax.php' ),
-            'wp_version' => get_bloginfo( 'version' )
-        ) );
+            'ajax_url'   => admin_url('admin-ajax.php'),
+            'wp_version' => get_bloginfo('version'),
+        ]);
     }
 }
 

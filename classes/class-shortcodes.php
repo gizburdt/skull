@@ -1,14 +1,16 @@
 <?php
 
-if( ! defined( 'ABSPATH' ) ) exit;
+if (!defined('ABSPATH')) {
+    exit;
+}
 
 class Skull_Shortcodes
 {
-    function __construct()
+    public function __construct()
     {
     }
 
-    function shortcode( $atts, $content = null )
+    public function shortcode($atts, $content = null)
     {
     }
 }

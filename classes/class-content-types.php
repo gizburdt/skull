@@ -1,33 +1,37 @@
 <?php
 
-if( ! defined( 'ABSPATH' ) ) exit;
+if (!defined('ABSPATH')) {
+    exit;
+}
 
 class Skull_Content_Types
 {
-    function __construct()
+    public function __construct()
     {
         // Init
-        add_action( 'init', array( &$this, 'register_post_types' ) );
-        add_action( 'init', array( &$this, 'register_taxonomies' ) );
+        add_action('init', [&$this, 'register_post_types']);
+        add_action('init', [&$this, 'register_taxonomies']);
     }
 
     /**
-     * Add post types
+     * Add post types.
      *
      * @author  {TODO:AUTHOR}
+     *
      * @since   0.1
      */
-    function register_post_types()
+    public function register_post_types()
     {
     }
 
     /**
-     * Add taxonomies
+     * Add taxonomies.
      *
      * @author  {TODO:AUTHOR}
+     *
      * @since   0.1
      */
-    function register_taxonomies()
+    public function register_taxonomies()
     {
     }
 }
