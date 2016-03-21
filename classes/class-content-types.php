@@ -2,7 +2,7 @@
 
 if( ! defined( 'ABSPATH' ) ) exit;
 
-class {TODO:PLUGIN}_Content_Types
+class Plugin_Content_Types
 {
     function __construct()
     {

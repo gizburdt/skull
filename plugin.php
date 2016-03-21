@@ -17,7 +17,7 @@ if( ! class_exists( '{TODO:PLUGIN}' ) ) :
 /**
  * {TODO:PLUGIN}
  */
-class {TODO:PLUGIN}
+class Plugin
 {
     private static $instance;
 

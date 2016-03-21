@@ -2,7 +2,7 @@
 
 if( ! defined( 'ABSPATH' ) ) exit;
 
-class {TODO:PLUGIN}_Shortcodes
+class Plugin_Shortcodes
 {
     function __construct()
     {
