@@ -2,7 +2,7 @@
 
 if( ! defined( 'ABSPATH' ) ) exit;
 
-class Plugin_Shortcodes
+class Skull_Shortcodes
 {
     function __construct()
     {

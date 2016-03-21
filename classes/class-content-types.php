@@ -2,7 +2,7 @@
 
 if( ! defined( 'ABSPATH' ) ) exit;
 
-class Plugin_Content_Types
+class Skull_Content_Types
 {
     function __construct()
     {
