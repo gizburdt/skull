@@ -77,7 +77,7 @@ class Plugin
     public function execute()
     {
         // Assets
-        new Plugin_Name_Assets()
+        new Plugin_Name_Assets();
 
         // Content types
         new Plugin_Name_Types();
