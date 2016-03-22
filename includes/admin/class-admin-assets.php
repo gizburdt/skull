@@ -7,9 +7,9 @@ if (! defined('ABSPATH')) {
 class Plugin_Name_Admin_Assets
 {
     /**
-     * Construct
+     * Construct.
      */
-    function __construct()
+    public function __construct()
     {
         // Styles
         add_action('admin_enqueue_scripts', array(&$this, 'register_styles'));
