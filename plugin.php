@@ -10,11 +10,11 @@ Author URI:     {TODO:AUTHOR_URI}
 License:        GPLv2
 */
 
-if (!defined('ABSPATH')) {
+if (! defined('ABSPATH')) {
     exit;
 }
 
-if (!class_exists('Plugin')) :
+if (! class_exists('Plugin')) :
 
 class Plugin
 {
@@ -22,7 +22,7 @@ class Plugin
 
     public static function instance()
     {
-        if (!isset(self::$instance)) {
+        if (! isset(self::$instance)) {
             self::$instance = new self();
             self::$instance->setup_constants();
             self::$instance->includes();
@@ -35,15 +35,15 @@ class Plugin
 
     public function setup_constants()
     {
-        if (!defined('PLUGIN_VERSION')) {
+        if (! defined('PLUGIN_VERSION')) {
             define('PLUGIN_VERSION', '0.1');
         }
 
-        if (!defined('PLUGIN_DIR')) {
+        if (! defined('PLUGIN_DIR')) {
             define('PLUGIN_DIR', plugin_dir_path(__FILE__));
         }
 
-        if (!defined('PLUGIN_URL')) {
+        if (! defined('PLUGIN_URL')) {
             define('PLUGIN_URL', plugin_dir_url(__FILE__));
         }
     }
@@ -68,7 +68,7 @@ class Plugin
     public function execute()
     {
         self::$instance->content_types = new Plugin_Content_Types();
-        self::$instance->shortcodes = new Plugin_Shortcodes();
+        self::$instance->shortcodes    = new Plugin_Shortcodes();
     }
 
     public function register_styles()
