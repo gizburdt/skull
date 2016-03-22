@@ -35,23 +35,23 @@ class Plugin
 
     public function setup_constants()
     {
-        if (!defined('{PLUGIN:UPPER}_VERSION')) {
-            define('{PLUGIN:UPPER}_VERSION', '0.1');
+        if (!defined('PLUGIN_VERSION')) {
+            define('PLUGIN_VERSION', '0.1');
         }
 
-        if (!defined('{PLUGIN:UPPER}_DIR')) {
-            define('{PLUGIN:UPPER}_DIR', plugin_dir_path(__FILE__));
+        if (!defined('PLUGIN_DIR')) {
+            define('PLUGIN_DIR', plugin_dir_path(__FILE__));
         }
 
-        if (!defined('{PLUGIN:UPPER}_URL')) {
-            define('{PLUGIN:UPPER}_URL', plugin_dir_url(__FILE__));
+        if (!defined('PLUGIN_URL')) {
+            define('PLUGIN_URL', plugin_dir_url(__FILE__));
         }
     }
 
     public function includes()
     {
-        include {PLUGIN:UPPER}_DIR.'classes/class-content-types.php';
-        include {PLUGIN:UPPER}_DIR.'classes/class-shortcodes.php';
+        include PLUGIN_DIR.'classes/class-content-types.php';
+        include PLUGIN_DIR.'classes/class-shortcodes.php';
     }
 
     public function add_hooks()
@@ -73,29 +73,29 @@ class Plugin
 
     public function register_styles()
     {
-        wp_register_style('{PLUGIN:LOWER}', {PLUGIN:UPPER}_URL.'assets/css/{PLUGIN:LOWER}.css', false, {PLUGIN:UPPER}_VERSION, 'screen');
+        wp_register_style('plugin', PLUGIN_URL.'assets/css/plugin.css', false, PLUGIN_VERSION, 'screen');
     }
 
     public function enqueue_styles()
     {
-        wp_enqueue_style('{PLUGIN:LOWER}');
+        wp_enqueue_style('plugin');
     }
 
     public function register_scripts()
     {
-        wp_register_script('{PLUGIN:LOWER}', {PLUGIN:UPPER}_URL.'assets/js/{PLUGIN:LOWER}.js', null, {PLUGIN:UPPER}_VERSION);
+        wp_register_script('plugin', PLUGIN_URL.'assets/js/plugin.js', null, PLUGIN_VERSION);
     }
 
     public function enqueue_scripts()
     {
-        wp_enqueue_script('{PLUGIN:LOWER}');
+        wp_enqueue_script('plugin');
 
         self::localize_scripts();
     }
 
     public function localize_scripts()
     {
-        wp_localize_script('{PLUGIN:LOWER}', 'Plugin', array(
+        wp_localize_script('plugin', 'Plugin', array(
             'home_url'   => get_home_url(),
             'ajax_url'   => admin_url('admin-ajax.php'),
             'wp_version' => get_bloginfo('version'),
