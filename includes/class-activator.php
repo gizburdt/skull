@@ -6,13 +6,12 @@ if (! defined('ABSPATH')) {
 
 class Plugin_Name_Activator
 {
-	/**
-	 * Activator.
-	 *
-	 * @return void
-	 */
-	public static function activate() {
-
-	}
-
+    /**
+     * Activator.
+     *
+     * @return void
+     */
+    public static function activate()
+    {
+    }
 }

@@ -4,7 +4,6 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-
 class Plugin_Name_Deactivator
 {
     /**
@@ -12,8 +11,7 @@ class Plugin_Name_Deactivator
      *
      * @return void
      */
-	public static function deactivate() {
-
-	}
-
+    public static function deactivate()
+    {
+    }
 }

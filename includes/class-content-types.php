@@ -15,7 +15,6 @@ class Plugin_Name_Content_Types
         add_action('init', array(&$this, 'register_taxonomies'));
     }
 
-
     /**
      * Add post types.
      *
