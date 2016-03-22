@@ -4,7 +4,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-class Skull_Shortcodes
+class Plugin_Shortcodes
 {
     public function __construct()
     {

@@ -4,13 +4,13 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-class Skull_Content_Types
+class Plugin_Content_Types
 {
     public function __construct()
     {
         // Init
-        add_action('init', [&$this, 'register_post_types']);
-        add_action('init', [&$this, 'register_taxonomies']);
+        add_action('init', array(&$this, 'register_post_types'));
+        add_action('init', array(&$this, 'register_taxonomies'));
     }
 
     /**
