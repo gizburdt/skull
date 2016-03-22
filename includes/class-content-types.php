@@ -4,21 +4,22 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-class Plugin_Content_Types
+class Plugin_Name_Content_Types
 {
+    /**
+     * Construct.
+     */
     public function __construct()
     {
-        // Init
         add_action('init', array(&$this, 'register_post_types'));
         add_action('init', array(&$this, 'register_taxonomies'));
     }
 
+
     /**
      * Add post types.
      *
-     * @author  {TODO:AUTHOR}
-     *
-     * @since   0.1
+     * @return void
      */
     public function register_post_types()
     {
@@ -27,9 +28,7 @@ class Plugin_Content_Types
     /**
      * Add taxonomies.
      *
-     * @author  {TODO:AUTHOR}
-     *
-     * @since   0.1
+     * @return [type] [description]
      */
     public function register_taxonomies()
     {
