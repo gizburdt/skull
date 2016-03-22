@@ -4,7 +4,7 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-class Plugin
+class Plugin_Name
 {
     /**
      * Run the plugin.
@@ -31,11 +31,11 @@ class Plugin
         }
 
         if (! defined('PLUGIN_DIR')) {
-            define('PLUGIN_DIR', plugin_dir_path(__FILE__));
+            define('PLUGIN_DIR', dirname(plugin_dir_path(__FILE__)));
         }
 
         if (! defined('PLUGIN_URL')) {
-            define('PLUGIN_URL', plugin_dir_url(__FILE__));
+            define('PLUGIN_URL', dirname(plugin_dir_url(__FILE__)));
         }
     }
 
@@ -53,6 +53,7 @@ class Plugin
 
         // Admin
         include PLUGIN_DIR.'includes/admin/class-admin.php';
+        include PLUGIN_DIR.'/includes/admin/class-admin-assets.php';
     }
 
     /**
@@ -80,7 +81,7 @@ class Plugin
         new Plugin_Name_Assets();
 
         // Content types
-        new Plugin_Name_Types();
+        new Plugin_Name_Content_Types();
 
         // Shortcodes
         new Plugin_Name_Shortcodes();

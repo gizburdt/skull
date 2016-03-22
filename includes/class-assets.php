@@ -11,15 +11,6 @@ class Plugin_Name_Assets
      */
     public function __construct()
     {
-        $this->add_public_assets();
-        $this->add_admin_assets();
-    }
-
-    /**
-     * Add public assets.
-     */
-    public function add_public_assets()
-    {
         // Styles
         add_action('wp_enqueue_style', array(&$this, 'register_styles'));
         add_action('wp_enqueue_style', array(&$this, 'enqueue_styles'));
