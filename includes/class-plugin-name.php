@@ -63,10 +63,10 @@ class Plugin
     public function load_textdomain()
     {
         load_plugin_textdomain(
-			'plugin-name',
-			false,
-			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
-		);
+            'plugin-name',
+            false,
+            dirname(dirname(plugin_basename(__FILE__))).'/languages/'
+        );
     }
 
     /**
