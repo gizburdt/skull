@@ -7,9 +7,9 @@ if (! defined('ABSPATH')) {
 class Plugin_Name_Assets
 {
     /**
-     * Construct
+     * Construct.
      */
-    function __construct()
+    public function __construct()
     {
         $this->add_public_assets();
         $this->add_admin_assets();
