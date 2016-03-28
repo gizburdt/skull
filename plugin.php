@@ -9,6 +9,7 @@
  * Author URI:     {TODO:AUTHOR_URI}
  * License:        GPLv2.
  */
+
 if (! defined('ABSPATH')) {
     exit;
 }
