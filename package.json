@@ -1,0 +1,15 @@
+{
+    "name": "project",
+    "version": "0.1.0",
+    "main": "gulpfile.js",
+    "dependencies": {},
+    "devDependencies": {
+        "gulp": "^3.9.0",
+        "gulp-util": "*",
+        "gulp-if": "*",
+        "gulp-sass": "^2.0.4",
+        "gulp-concat": "^2.6.0",
+        "gulp-uglify": "*",
+        "gulp-minify-css": "^1.2.1"
+    }
+}

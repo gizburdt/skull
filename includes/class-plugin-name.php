@@ -54,6 +54,9 @@ class Plugin_Name
         // Admin
         include PLUGIN_DIR.'/includes/admin/class-admin.php';
         include PLUGIN_DIR.'/includes/admin/class-admin-assets.php';
+
+        // Views
+        // include PLUGIN_DIR.'/views/public/view.php';
     }
 
     /**
@@ -88,5 +91,23 @@ class Plugin_Name
 
         // Admin
         new Plugin_Name_Admin();
+    }
+
+    /**
+     * Include view file.
+     *
+     * @param string $view
+     * @param array  $variables
+     * @since 3.0
+     */
+    public static function view($view, $variables = array())
+    {
+        extract($variables);
+
+        ob_start();
+
+        include PLUGIN_DIR.'/views/'.$view.'.php';
+
+        return ob_get_clean();
     }
 }

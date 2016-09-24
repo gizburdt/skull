@@ -15,7 +15,7 @@ class Plugin_Name_Assets
         add_action('wp_enqueue_style', array(&$this, 'register_styles'));
         add_action('wp_enqueue_style', array(&$this, 'enqueue_styles'));
 
-        // PScripts
+        // Scripts
         add_action('wp_enqueue_scripts', array(&$this, 'register_scripts'));
         add_action('wp_enqueue_scripts', array(&$this, 'enqueue_scripts'));
     }
@@ -27,7 +27,7 @@ class Plugin_Name_Assets
      */
     public function register_styles()
     {
-        wp_register_style('plugin', PLUGIN_URL.'assets/public/css/plugin.css', false, PLUGIN_VERSION, 'screen');
+        wp_register_style('plugin', PLUGIN_URL.'assets/build/css/public.css', false, PLUGIN_VERSION, 'screen');
     }
 
     /**
@@ -47,7 +47,7 @@ class Plugin_Name_Assets
      */
     public function register_scripts()
     {
-        wp_register_script('plugin', PLUGIN_URL.'assets/public/js/plugin.js', null, PLUGIN_VERSION);
+        wp_register_script('plugin', PLUGIN_URL.'assets/build/js/public.js', null, PLUGIN_VERSION);
     }
 
     /**
