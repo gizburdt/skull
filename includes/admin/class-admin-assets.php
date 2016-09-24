@@ -27,7 +27,7 @@ class Plugin_Name_Admin_Assets
      */
     public function register_styles()
     {
-        wp_register_style('plugin', PLUGIN_URL.'assets/build/css/admin.css', false, PLUGIN_VERSION, 'screen');
+        wp_register_style('plugin', PLUGIN_URL.'/assets/build/css/admin.css', false, PLUGIN_VERSION, 'screen');
     }
 
     /**
@@ -47,7 +47,7 @@ class Plugin_Name_Admin_Assets
      */
     public function register_scripts()
     {
-        wp_register_script('plugin', PLUGIN_URL.'assets/build/js/admin.js', null, PLUGIN_VERSION);
+        wp_register_script('plugin', PLUGIN_URL.'/assets/build/js/admin.js', null, PLUGIN_VERSION);
     }
 
     /**
