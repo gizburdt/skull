@@ -106,7 +106,7 @@ class Plugin_Name
 
         ob_start();
 
-        include PLUGIN_DIR.'/views/'.$view.'.php';
+        include PLUGIN_DIR.'/resources/views/'.$view.'.php';
 
         return ob_get_clean();
     }
