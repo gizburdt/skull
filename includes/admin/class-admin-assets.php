@@ -27,7 +27,7 @@ class Plugin_Name_Admin_Assets
      */
     public function register_styles()
     {
-        wp_register_style('plugin', PLUGIN_URL.'/assets/admin/css/admin.css', false, PLUGIN_VERSION, 'screen');
+        wp_register_style('plugin-admin', PLUGIN_URL.'/assets/admin/css/admin.css', false, PLUGIN_VERSION, 'screen');
     }
 
     /**
@@ -37,7 +37,7 @@ class Plugin_Name_Admin_Assets
      */
     public function enqueue_styles()
     {
-        wp_enqueue_style('plugin');
+        wp_enqueue_style('plugin-admin');
     }
 
     /**
@@ -47,7 +47,7 @@ class Plugin_Name_Admin_Assets
      */
     public function register_scripts()
     {
-        wp_register_script('plugin', PLUGIN_URL.'/assets/admin/js/admin.js', null, PLUGIN_VERSION);
+        wp_register_script('plugin-admin', PLUGIN_URL.'/assets/admin/js/admin.js', null, PLUGIN_VERSION);
     }
 
     /**
@@ -57,8 +57,9 @@ class Plugin_Name_Admin_Assets
      */
     public function enqueue_scripts()
     {
-        wp_enqueue_script('plugin');
+        wp_enqueue_script('plugin-admin');
 
+        // Localize
         self::localize_admin_scripts();
     }
 

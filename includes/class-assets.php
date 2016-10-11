@@ -27,7 +27,7 @@ class Plugin_Name_Assets
      */
     public function register_styles()
     {
-        wp_register_style('plugin', PLUGIN_URL.'/assets/public/css/public.css', false, PLUGIN_VERSION, 'screen');
+        wp_register_style('plugin-public', PLUGIN_URL.'/assets/public/css/public.css', false, PLUGIN_VERSION, 'screen');
     }
 
     /**
@@ -37,7 +37,7 @@ class Plugin_Name_Assets
      */
     public function enqueue_styles()
     {
-        wp_enqueue_style('plugin');
+        wp_enqueue_style('plugin-public');
     }
 
     /**
@@ -47,7 +47,7 @@ class Plugin_Name_Assets
      */
     public function register_scripts()
     {
-        wp_register_script('plugin', PLUGIN_URL.'/assets/public/js/public.js', null, PLUGIN_VERSION);
+        wp_register_script('plugin-public', PLUGIN_URL.'/assets/public/js/public.js', null, PLUGIN_VERSION);
     }
 
     /**
@@ -57,7 +57,7 @@ class Plugin_Name_Assets
      */
     public function enqueue_scripts()
     {
-        wp_enqueue_script('plugin');
+        wp_enqueue_script('plugin-public');
 
         self::localize_public_scripts();
     }
