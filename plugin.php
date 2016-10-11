@@ -56,4 +56,4 @@ function run_plugin_name()
 
     $plugin->run();
 }
-run_plugin_name();
+add_action('plugins_loaded', 'run_plugin_name');
