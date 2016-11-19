@@ -53,7 +53,6 @@ class Plugin_Name
 
         // Admin
         include PLUGIN_DIR.'/includes/admin/class-admin.php';
-        include PLUGIN_DIR.'/includes/admin/class-admin-assets.php';
 
         // Views
         // include PLUGIN_DIR.'/views/public/view.php';

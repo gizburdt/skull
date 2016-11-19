@@ -70,7 +70,7 @@ class Plugin_Name_Admin_Assets
      */
     public function localize_admin_scripts()
     {
-        wp_localize_script('plugin', 'Plugin', array(
+        wp_localize_script('plugin-admin', 'Plugin', array(
             'home_url'   => get_home_url(),
             'ajax_url'   => admin_url('admin-ajax.php'),
             'wp_version' => get_bloginfo('version'),

@@ -69,7 +69,7 @@ class Plugin_Name_Assets
      */
     public function localize_public_scripts()
     {
-        wp_localize_script('plugin', 'Plugin', array(
+        wp_localize_script('plugin-public', 'Plugin', array(
             'home_url'   => get_home_url(),
             'ajax_url'   => admin_url('admin-ajax.php'),
             'wp_version' => get_bloginfo('version'),

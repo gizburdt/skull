@@ -13,7 +13,19 @@ class Plugin_Name_Admin
      */
     public function __construct()
     {
+        $this->includes();
+
         $this->execute();
+    }
+
+    /**
+     * Include files.
+     *
+     * @return void
+     */
+    public function includes()
+    {
+        include PLUGIN_DIR.'/includes/admin/class-admin-assets.php';
     }
 
     /**
