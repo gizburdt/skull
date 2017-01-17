@@ -4,7 +4,7 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-class Plugin_Name_Admin_Assets
+class PluginNameAdminAssets
 {
     /**
      * Construct.
@@ -12,12 +12,12 @@ class Plugin_Name_Admin_Assets
     public function __construct()
     {
         // Styles
-        add_action('admin_enqueue_scripts', array(&$this, 'register_styles'));
-        add_action('admin_enqueue_scripts', array(&$this, 'enqueue_styles'));
+        add_action('admin_enqueue_scripts', array(&$this, 'registerStyles'));
+        add_action('admin_enqueue_scripts', array(&$this, 'enqueueStyles'));
 
         // Scripts
-        add_action('admin_enqueue_scripts', array(&$this, 'register_scripts'));
-        add_action('admin_enqueue_scripts', array(&$this, 'enqueue_scripts'));
+        add_action('admin_enqueue_scripts', array(&$this, 'registerScripts'));
+        add_action('admin_enqueue_scripts', array(&$this, 'enqueueScripts'));
     }
 
     /**
@@ -25,7 +25,7 @@ class Plugin_Name_Admin_Assets
      *
      * @return void
      */
-    public function register_styles()
+    public function registerStyles()
     {
         wp_register_style('plugin-admin', PLUGIN_URL.'/assets/admin/css/admin.css', false, PLUGIN_VERSION, 'screen');
     }
@@ -35,7 +35,7 @@ class Plugin_Name_Admin_Assets
      *
      * @return void
      */
-    public function enqueue_styles()
+    public function enqueueStyles()
     {
         wp_enqueue_style('plugin-admin');
     }
@@ -45,7 +45,7 @@ class Plugin_Name_Admin_Assets
      *
      * @return void
      */
-    public function register_scripts()
+    public function registerScripts()
     {
         wp_register_script('plugin-admin', PLUGIN_URL.'/assets/admin/js/admin.js', null, PLUGIN_VERSION);
     }
@@ -55,12 +55,12 @@ class Plugin_Name_Admin_Assets
      *
      * @return void
      */
-    public function enqueue_scripts()
+    public function enqueueScripts()
     {
         wp_enqueue_script('plugin-admin');
 
         // Localize
-        self::localize_admin_scripts();
+        self::localizeAdminScripts();
     }
 
     /**
@@ -68,7 +68,7 @@ class Plugin_Name_Admin_Assets
      *
      * @return void
      */
-    public function localize_admin_scripts()
+    public function localizeAdminScripts()
     {
         wp_localize_script('plugin-admin', 'Plugin', array(
             'home_url'   => get_home_url(),

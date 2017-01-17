@@ -4,7 +4,7 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-class Plugin_Name_Assets
+class PluginNameAssets
 {
     /**
      * Construct.
@@ -12,12 +12,12 @@ class Plugin_Name_Assets
     public function __construct()
     {
         // Styles
-        add_action('wp_enqueue_style', array(&$this, 'register_styles'));
-        add_action('wp_enqueue_style', array(&$this, 'enqueue_styles'));
+        add_action('wp_enqueue_style', array(&$this, 'registerStyles'));
+        add_action('wp_enqueue_style', array(&$this, 'enqueueStyles'));
 
         // Scripts
-        add_action('wp_enqueue_scripts', array(&$this, 'register_scripts'));
-        add_action('wp_enqueue_scripts', array(&$this, 'enqueue_scripts'));
+        add_action('wp_enqueue_scripts', array(&$this, 'registerScripts'));
+        add_action('wp_enqueue_scripts', array(&$this, 'enqueueScripts'));
     }
 
     /**
@@ -25,7 +25,7 @@ class Plugin_Name_Assets
      *
      * @return void
      */
-    public function register_styles()
+    public function registerStyles()
     {
         wp_register_style('plugin-public', PLUGIN_URL.'/assets/public/css/public.css', false, PLUGIN_VERSION, 'screen');
     }
@@ -35,7 +35,7 @@ class Plugin_Name_Assets
      *
      * @return void
      */
-    public function enqueue_styles()
+    public function enqueueStyles()
     {
         wp_enqueue_style('plugin-public');
     }
@@ -45,7 +45,7 @@ class Plugin_Name_Assets
      *
      * @return void
      */
-    public function register_scripts()
+    public function registerScripts()
     {
         wp_register_script('plugin-public', PLUGIN_URL.'/assets/public/js/public.js', null, PLUGIN_VERSION);
     }
@@ -55,11 +55,11 @@ class Plugin_Name_Assets
      *
      * @return void
      */
-    public function enqueue_scripts()
+    public function enqueueScripts()
     {
         wp_enqueue_script('plugin-public');
 
-        self::localize_public_scripts();
+        self::localizePublicScripts();
     }
 
     /**
@@ -67,7 +67,7 @@ class Plugin_Name_Assets
      *
      * @return void
      */
-    public function localize_public_scripts()
+    public function localizePublicScripts()
     {
         wp_localize_script('plugin-public', 'Plugin', array(
             'home_url'   => get_home_url(),

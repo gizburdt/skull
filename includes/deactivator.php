@@ -4,14 +4,14 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-class Plugin_Name_Activator
+class PluginNameDeactivator
 {
     /**
-     * Activator.
+     * Deactivate.
      *
      * @return void
      */
-    public static function activate()
+    public static function deactivate()
     {
     }
 }

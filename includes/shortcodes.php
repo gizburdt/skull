@@ -4,7 +4,7 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-class Plugin_Name_Shortcodes
+class PluginNameShortcodes
 {
     /**
      * Construct.

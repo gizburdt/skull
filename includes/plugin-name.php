@@ -4,7 +4,7 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-class Plugin_Name
+class PluginName
 {
     /**
      * Run the plugin.
@@ -13,9 +13,9 @@ class Plugin_Name
      */
     public function run()
     {
-        $this->setup_constants();
+        $this->setupConstants();
         $this->includes();
-        $this->load_textdomain();
+        $this->loadTextdomain();
         $this->execute();
     }
 
@@ -24,7 +24,7 @@ class Plugin_Name
      *
      * @return void
      */
-    public function setup_constants()
+    public function setupConstants()
     {
         if (! defined('PLUGIN_VERSION')) {
             define('PLUGIN_VERSION', '0.1');
@@ -47,12 +47,12 @@ class Plugin_Name
     public function includes()
     {
         // Public
-        include PLUGIN_DIR.'/includes/class-assets.php';
-        include PLUGIN_DIR.'/includes/class-content-types.php';
-        include PLUGIN_DIR.'/includes/class-shortcodes.php';
+        include PLUGIN_DIR.'/includes/assets.php';
+        include PLUGIN_DIR.'/includes/content-types.php';
+        include PLUGIN_DIR.'/includes/shortcodes.php';
 
         // Admin
-        include PLUGIN_DIR.'/includes/admin/class-admin.php';
+        include PLUGIN_DIR.'/includes/admin/admin.php';
 
         // Views
         // include PLUGIN_DIR.'/views/public/view.php';
@@ -63,7 +63,7 @@ class Plugin_Name
      *
      * @return void
      */
-    public function load_textdomain()
+    public function loadTextdomain()
     {
         load_plugin_textdomain(
             'plugin-name',
@@ -80,16 +80,16 @@ class Plugin_Name
     public function execute()
     {
         // Assets
-        new Plugin_Name_Assets();
+        new PluginNameAssets();
 
         // Content types
-        new Plugin_Name_Content_Types();
+        new PluginNameContentTypes();
 
         // Shortcodes
-        new Plugin_Name_Shortcodes();
+        new PluginNameShortcodes();
 
         // Admin
-        new Plugin_Name_Admin();
+        new PluginNameAdmin();
     }
 
     /**

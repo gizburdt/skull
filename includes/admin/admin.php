@@ -4,7 +4,7 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-class Plugin_Name_Admin
+class PluginNameAdmin
 {
     /**
      * Construct.
@@ -25,7 +25,7 @@ class Plugin_Name_Admin
      */
     public function includes()
     {
-        include PLUGIN_DIR.'/includes/admin/class-admin-assets.php';
+        include PLUGIN_DIR.'/includes/admin/assets.php';
     }
 
     /**
@@ -36,6 +36,6 @@ class Plugin_Name_Admin
     public function execute()
     {
         // Assets
-        new Plugin_Name_Admin_Assets();
+        new PluginNameAdminAssets();
     }
 }

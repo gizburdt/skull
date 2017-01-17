@@ -4,15 +4,15 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-class Plugin_Name_Content_Types
+class PluginNameContentTypes
 {
     /**
      * Construct.
      */
     public function __construct()
     {
-        add_action('init', array(&$this, 'register_post_types'));
-        add_action('init', array(&$this, 'register_taxonomies'));
+        add_action('init', array(&$this, 'registerPostTypes'));
+        add_action('init', array(&$this, 'registerTaxonomies'));
     }
 
     /**
@@ -20,7 +20,7 @@ class Plugin_Name_Content_Types
      *
      * @return void
      */
-    public function register_post_types()
+    public function registerPostTypes()
     {
     }
 
@@ -29,7 +29,7 @@ class Plugin_Name_Content_Types
      *
      * @return [type] [description]
      */
-    public function register_taxonomies()
+    public function registerTaxonomies()
     {
     }
 }
