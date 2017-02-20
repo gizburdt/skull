@@ -12,8 +12,8 @@ class PluginNameAssets
     public function __construct()
     {
         // Styles
-        add_action('wp_enqueue_style', array(&$this, 'registerStyles'));
-        add_action('wp_enqueue_style', array(&$this, 'enqueueStyles'));
+        add_action('wp_enqueue_scripts', array(&$this, 'registerStyles'));
+        add_action('wp_enqueue_scripts', array(&$this, 'enqueueStyles'));
 
         // Scripts
         add_action('wp_enqueue_scripts', array(&$this, 'registerScripts'));
