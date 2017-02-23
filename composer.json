@@ -2,6 +2,7 @@
     "name": "developer/plugin",
     "type": "wordpress-plugin",
     "description": "Plugin description",
+    "license": "MIT",
     "authors": [
         {
             "name": "Developer",
