@@ -47,12 +47,12 @@ class PluginName
     public function includes()
     {
         // Public
-        include PLUGIN_DIR.'/includes/assets.php';
-        include PLUGIN_DIR.'/includes/content-types.php';
-        include PLUGIN_DIR.'/includes/shortcodes.php';
+        include PLUGIN_DIR.'/app/assets.php';
+        include PLUGIN_DIR.'/app/content-types.php';
+        include PLUGIN_DIR.'/app/shortcodes.php';
 
         // Admin
-        include PLUGIN_DIR.'/includes/admin/admin.php';
+        include PLUGIN_DIR.'/app/admin/admin.php';
     }
 
     /**

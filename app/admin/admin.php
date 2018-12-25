@@ -24,7 +24,7 @@ class PluginNameAdmin
      */
     public function includes()
     {
-        include PLUGIN_DIR.'/includes/admin/assets.php';
+        include PLUGIN_DIR.'/app/admin/assets.php';
     }
 
     /**

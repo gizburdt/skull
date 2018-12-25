@@ -17,7 +17,6 @@ if (! defined('ABSPATH')) {
  * The code that runs during plugin activation.
  * This action is documented in includes/plugin-name-activator.php.
  */
-}
 register_activation_hook(__FILE__, function () {
     require_once plugin_dir_path(__FILE__).'includes/activator.php';
 
