@@ -14,7 +14,6 @@ class PluginNameAdmin
     public function __construct()
     {
         $this->includes();
-
         $this->execute();
     }
 

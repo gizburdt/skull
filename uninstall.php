@@ -14,7 +14,6 @@
  * - Repeat things for multisite. Once for a single site in the network, once sitewide.
  */
 
-// If uninstall not called from WordPress, then exit.
 if (! defined('WP_UNINSTALL_PLUGIN')) {
     exit;
 }

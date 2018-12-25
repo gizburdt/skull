@@ -13,5 +13,6 @@ class PluginNameActivator
      */
     public static function activate()
     {
+        //
     }
 }

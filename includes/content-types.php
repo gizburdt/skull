@@ -11,8 +11,10 @@ class PluginNameContentTypes
      */
     public function __construct()
     {
-        add_action('init', array(&$this, 'registerPostTypes'));
-        add_action('init', array(&$this, 'registerTaxonomies'));
+        add_action('init', function () {
+            $this->registerPostTypes();
+            $this->registerTaxonomies();
+        });
     }
 
     /**
@@ -22,6 +24,7 @@ class PluginNameContentTypes
      */
     public function registerPostTypes()
     {
+        //
     }
 
     /**
@@ -31,5 +34,6 @@ class PluginNameContentTypes
      */
     public function registerTaxonomies()
     {
+        //
     }
 }

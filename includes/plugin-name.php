@@ -53,9 +53,6 @@ class PluginName
 
         // Admin
         include PLUGIN_DIR.'/includes/admin/admin.php';
-
-        // Views
-        // include PLUGIN_DIR.'/views/public/view.php';
     }
 
     /**
@@ -66,9 +63,7 @@ class PluginName
     public function loadTextdomain()
     {
         load_plugin_textdomain(
-            'plugin-name',
-            false,
-            dirname(dirname(plugin_basename(__FILE__))).'/languages/'
+            'plugin-name', false, dirname(dirname(plugin_basename(__FILE__))).'/languages/'
         );
     }
 
@@ -99,7 +94,7 @@ class PluginName
      * @param array  $variables
      * @since 3.0
      */
-    public static function view($view, $variables = array())
+    public static function view($view, $variables = [])
     {
         extract($variables);
 

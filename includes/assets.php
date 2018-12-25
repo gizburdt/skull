@@ -11,68 +11,36 @@ class PluginNameAssets
      */
     public function __construct()
     {
-        // Styles
-        add_action('wp_enqueue_scripts', array(&$this, 'registerStyles'));
-        add_action('wp_enqueue_scripts', array(&$this, 'enqueueStyles'));
-
-        // Scripts
-        add_action('wp_enqueue_scripts', array(&$this, 'registerScripts'));
-        add_action('wp_enqueue_scripts', array(&$this, 'enqueueScripts'));
+        add_action('wp_enqueue_scripts', function () {
+            $this->enqueue();
+            $this->localize();
+        }, 100);
     }
 
     /**
-     * Register public styles.
+     * Enqueue.
      *
      * @return void
      */
-    public function registerStyles()
+    public function enqueue()
     {
-        wp_register_style('plugin-public', PLUGIN_URL.'/assets/public/css/public.css', false, PLUGIN_VERSION, 'screen');
+        $version = PLUGIN_VERSION;
+
+        wp_enqueue_style('plugin-name/public.css', PLUGIN_URL.'/public/css/public.css', false, $version, 'screen');
+        wp_enqueue_script('plugin-name/public.js', PLUGIN_URL.'/public/js/public.js', false, $version, 'screen');
     }
 
     /**
-     * Enqueue public styles.
+     * Localize.
      *
      * @return void
      */
-    public function enqueueStyles()
+    public function localize()
     {
-        wp_enqueue_style('plugin-public');
-    }
-
-    /**
-     * Register public scripts.
-     *
-     * @return void
-     */
-    public function registerScripts()
-    {
-        wp_register_script('plugin-public', PLUGIN_URL.'/assets/public/js/public.js', null, PLUGIN_VERSION);
-    }
-
-    /**
-     * Enqueue public scripts.
-     *
-     * @return void
-     */
-    public function enqueueScripts()
-    {
-        wp_enqueue_script('plugin-public');
-
-        self::localizePublicScripts();
-    }
-
-    /**
-     * Localize public scripts.
-     *
-     * @return void
-     */
-    public function localizePublicScripts()
-    {
-        wp_localize_script('plugin-public', 'Plugin', array(
+        wp_localize_script('plugin-name/public.js', 'Plugin', [
             'home_url'   => get_home_url(),
             'ajax_url'   => admin_url('admin-ajax.php'),
             'wp_version' => get_bloginfo('version'),
-        ));
+        ]);
     }
 }

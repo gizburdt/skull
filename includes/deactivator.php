@@ -13,5 +13,6 @@ class PluginNameDeactivator
      */
     public static function deactivate()
     {
+        //
     }
 }

@@ -11,7 +11,7 @@ class PluginNameShortcodes
      */
     public function __construct()
     {
-        // add_shortcode('shortcode', array(&$this, 'shortcode'));
+        // add_shortcode('shortcode', [&$this, 'shortcode']);
     }
 
     /**
@@ -23,5 +23,6 @@ class PluginNameShortcodes
      */
     public function shortcode($atts, $content = null)
     {
+        //
     }
 }
