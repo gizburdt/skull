@@ -7,13 +7,13 @@
  * Version:        {{Plugin Version}}
  * Author:         {{Plugin Author}}
  * Author URI:     {{Plugin Author Uri}}
- * License:        MIT
+ * License:        MIT.
  */
 if (! defined('ABSPATH')) {
     exit;
 }
 
-/**
+/*
  * The code that runs during plugin activation.
  * This action is documented in includes/plugin-name-activator.php.
  */
@@ -23,7 +23,7 @@ register_activation_hook(__FILE__, function () {
     PluginNameActivator::activate();
 });
 
-/**
+/*
  * The code that runs during plugin deactivation.
  * This action is documented in includes/plugin-name-deactivator.php.
  */
@@ -39,7 +39,7 @@ register_deactivation_hook(__FILE__, function () {
  */
 require plugin_dir_path(__FILE__).'includes/plugin-name.php';
 
-/**
+/*
  * Begins execution of the plugin.
  *
  * Since everything within the plugin is registered via hooks,
